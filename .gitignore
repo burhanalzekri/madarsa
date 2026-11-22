@@ -7,30 +7,3 @@ dist/
 
 .env.local
 .env.*.local
-
-# Dependencies & build outputs
-frontend/node_modules/
-frontend/dist/
-backend/vendor/
-vendor/
-
-# Environment & local database
-backend/.env
-*.sqlite
-*.sqlite-journal
-*.sqlite-wal
-*.sqlite-shm
-backend/database/*.sqlite*
-
-# Laravel cache & logs
-backend/bootstrap/cache/*.php
-backend/storage/logs/*.log
-backend/storage/framework/cache/*
-backend/storage/framework/sessions/*
-backend/storage/framework/views/*
-
-# OS & editor files
-Thumbs.db
-*.swp
-*.swo
-frontend/tsconfig.tsbuildinfo

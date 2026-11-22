@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Activity, Award, BookOpen, CalendarCheck, CheckCircle2, ClipboardList, GraduationCap, RefreshCw, Users } from 'lucide-react'
 import { api, type ApiUser } from './api'
+import RoleUserGuide from './RoleUserGuide'
 
 type Child = {
   id:number; name:string; student_number:string; relationship:string; grade:string|null; classroom:string|null
@@ -31,5 +32,6 @@ export default function ParentPortal({user,token,onLogout}:Props){
    {academicReport&&academicReport.student.student_number===child.student_number&&<section className="role-panel parent-academic-report"><div className="portal-section-head"><div><h2>التقرير الأكاديمي</h2><p>{academicReport.student.name} • {academicReport.student.student_number}</p></div><button className="btn-light" onClick={()=>window.print()}>طباعة التقرير</button></div><div className="parent-attendance-grid"><div><b>{academicReport.overall_average===null?'—':`${academicReport.overall_average}%`}</b><span>متوسط الأداء</span></div><div><b>{academicReport.attendance.present}</b><span>حضور</span></div><div><b>{academicReport.attendance.absent}</b><span>غياب</span></div><div><b>{academicReport.attendance.late}</b><span>تأخر</span></div></div>{academicReport.subjects.length?academicReport.subjects.map((x,i)=><article className="parent-record" key={`${x.subject}-${i}`}><div><b>{x.subject}</b><small>اختبارات: {x.exams_count} • واجبات مصححة: {x.assignments_count}</small></div><strong>{x.overall_average===null?'—':`${x.overall_average}%`}</strong></article>):<p className="parent-muted">لا توجد درجات معتمدة كافية بعد.</p>}<p className="parent-note">{academicReport.note}</p></section>}
    </>}
   </section>
+  <RoleUserGuide role="parent"/>
  </main>
 }

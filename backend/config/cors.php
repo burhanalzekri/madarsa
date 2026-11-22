@@ -9,7 +9,6 @@ return [
     )))),
     'allowed_origins_patterns' => [
         '#^https?://(10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(1[6-9]|2[0-9]|3[0-1])\.\d{1,3}\.\d{1,3}):5173$#',
-        '#^https://[a-z0-9-]+\.vercel\.app$#i',
     ],
     'allowed_headers' => ['*'],
     'exposed_headers' => [],

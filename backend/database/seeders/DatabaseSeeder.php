@@ -10,6 +10,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // Demo data is intentionally prohibited outside local/testing.
+        if (!app()->environment(['local', 'testing'])) {
+            $this->command?->warn('تم تخطي بيانات العرض التجريبي خارج بيئة local/testing.');
+            return;
+        }
+
         DB::transaction(function (): void {
             $now = now();
             $schoolId = DB::table('schools')->where('slug', env('SCHOOL_SLUG', 'madrasa-demo'))->value('id');

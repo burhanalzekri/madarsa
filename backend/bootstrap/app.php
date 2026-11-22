@@ -12,6 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    ->withCommands(__DIR__.'/../app/Console/Commands')
     ->withMiddleware(function (Middleware $middleware): void {
         // Authentication uses Sanctum personal access tokens (Bearer); browser stateful
         // middleware is intentionally disabled to avoid CSRF/session mismatch on API login.

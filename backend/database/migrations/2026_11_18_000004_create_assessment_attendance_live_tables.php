@@ -13,7 +13,7 @@ return new class extends Migration {
             $t->foreignId('grade_subject_id')->constrained()->cascadeOnDelete();
             $t->foreignId('classroom_id')->constrained()->cascadeOnDelete();
             $t->string('title'); $t->longText('instructions')->nullable();
-            $t->timestamp('due_at')->nullable(); $t->decimal('max_score',8,2)->default(100)->unsigned();
+            $t->timestamp('due_at')->nullable(); $t->unsignedDecimal('max_score',8,2)->default(100);
             $t->boolean('is_published')->default(false); $t->timestamps();
             $t->index(['school_id','classroom_id','is_published']);
         });
@@ -21,7 +21,7 @@ return new class extends Migration {
             $t->id(); $t->foreignId('assignment_id')->constrained()->cascadeOnDelete();
             $t->foreignId('student_profile_id')->constrained()->cascadeOnDelete();
             $t->longText('answer_text')->nullable(); $t->string('attachment_path')->nullable();
-            $t->timestamp('submitted_at')->nullable(); $t->decimal('score',8,2)->nullable()->unsigned();
+            $t->timestamp('submitted_at')->nullable(); $t->unsignedDecimal('score',8,2)->nullable();
             $t->text('teacher_feedback')->nullable(); $t->foreignId('graded_by')->nullable()->constrained('users')->nullOnDelete();
             $t->timestamps(); $t->unique(['assignment_id','student_profile_id']);
         });
@@ -31,19 +31,19 @@ return new class extends Migration {
             $t->foreignId('grade_subject_id')->constrained()->cascadeOnDelete();
             $t->foreignId('classroom_id')->constrained()->cascadeOnDelete();
             $t->string('title'); $t->text('instructions')->nullable(); $t->timestamp('starts_at')->nullable();
-            $t->unsignedInteger('duration_minutes')->default(30); $t->decimal('total_score',8,2)->default(100)->unsigned();
+            $t->unsignedInteger('duration_minutes')->default(30); $t->unsignedDecimal('total_score',8,2)->default(100);
             $t->boolean('is_published')->default(false); $t->timestamps();
         });
         Schema::create('exam_questions', function (Blueprint $t) {
             $t->id(); $t->foreignId('exam_id')->constrained()->cascadeOnDelete();
             $t->string('question_type',30); $t->longText('question_text'); $t->json('options')->nullable();
-            $t->string('correct_answer')->nullable(); $t->decimal('score',8,2)->default(1)->unsigned();
+            $t->string('correct_answer')->nullable(); $t->unsignedDecimal('score',8,2)->default(1);
             $t->unsignedInteger('sort_order')->default(0); $t->timestamps();
         });
         Schema::create('exam_attempts', function (Blueprint $t) {
             $t->id(); $t->foreignId('exam_id')->constrained()->cascadeOnDelete();
             $t->foreignId('student_profile_id')->constrained()->cascadeOnDelete();
-            $t->json('answers')->nullable(); $t->decimal('score',8,2)->nullable()->unsigned();
+            $t->json('answers')->nullable(); $t->unsignedDecimal('score',8,2)->nullable();
             $t->timestamp('started_at')->nullable(); $t->timestamp('submitted_at')->nullable();
             $t->string('status',20)->default('in_progress'); $t->timestamps();
             $t->index(['exam_id','student_profile_id']);
