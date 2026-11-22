@@ -7,3 +7,6 @@ dist/
 
 .env.local
 .env.*.local
+backend/vendor/
+frontend/node_modules/
+backend/.env
