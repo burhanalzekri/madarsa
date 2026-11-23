@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\V1\{AuthController,StudentController,TeacherControl
 Route::get('/health', fn () => response()->json([
     'status' => 'ok',
     'application' => config('app.name'),
-    'version' => trim(file_get_contents(base_path('../VERSION'))),
+    'version' => is_file(base_path('../VERSION'))
+        ? trim((string) file_get_contents(base_path('../VERSION')))
+        : 'unknown',
 ]));
 
 Route::prefix('v1')->group(function () {
