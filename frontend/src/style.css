@@ -568,3 +568,22 @@ th{font-size:13px}td{font-size:13px}.table-search input{font-size:14px}
 .teacher-student-shell .teacher-content[data-active-section="teacher-communication"]>#teacher-communication{display:block!important}
 .teacher-student-shell .teacher-content[data-active-section]:not([data-active-section="teacher-home"])>.role-error,
 .teacher-student-shell .teacher-content[data-active-section]:not([data-active-section="teacher-home"])>.role-panel[role="status"]{display:block!important}
+
+/* Bulk student import workflow */
+.student-import-modal{width:min(760px,calc(100vw - 28px));max-height:min(88vh,900px);overflow:auto}
+.import-instructions{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line,#e3e9e5);border-radius:14px;background:var(--surface-soft,#f5f8f6);margin:14px 0}
+.import-instructions>svg{flex:none;color:var(--primary,#14584b)}
+.import-instructions>div{flex:1;min-width:0}
+.import-instructions b,.import-instructions p{margin:0}
+.import-instructions p{font-size:12px;color:var(--muted,#68766f);margin-top:4px;line-height:1.7}
+.import-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:145px;border:2px dashed #a9c2b4;border-radius:15px;background:rgba(20,88,75,.035);cursor:pointer;text-align:center;padding:18px;color:var(--primary,#14584b)}
+.import-dropzone b{color:var(--text,#26352e);overflow-wrap:anywhere}.import-dropzone span{font-size:12px;color:var(--muted,#68766f)}.import-dropzone input{max-width:100%;font-size:12px}
+.import-field-note,.import-caution{font-size:12px;line-height:1.8;color:var(--muted,#68766f);margin:12px 0}
+.import-error,.import-result{display:flex;align-items:flex-start;gap:9px;padding:12px;border-radius:12px;margin-top:12px;background:#fff1ef;color:#a33b30;font-size:13px;line-height:1.7}
+.import-result{flex-direction:column;background:#edf8f1;color:#17643e}.import-result svg{flex:none}.import-result small{font-size:12px;color:#8b332a}.import-summary{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.import-summary span{padding:8px 12px;border-radius:10px;background:var(--surface-soft,#f5f8f6);font-size:12px}.import-summary b{font-size:16px;margin-inline-end:4px}.valid{color:#167344!important}.invalid{color:#a33b30!important}.import-rows{max-height:220px;overflow:auto;border:1px solid var(--line,#e3e9e5);border-radius:12px;padding:8px}.import-row{display:grid;grid-template-columns:75px minmax(100px,1fr) minmax(120px,1.3fr);gap:8px;align-items:center;padding:8px;border-bottom:1px solid var(--line,#e3e9e5);font-size:12px}.import-row:last-child{border-bottom:0}.import-row>span{color:var(--muted,#68766f)}.import-row small{line-height:1.6}.import-caution{color:#99651b}.spin{animation:madrasa-spin .9s linear infinite}@keyframes madrasa-spin{to{transform:rotate(360deg)}}
+@media(max-width:620px){.import-instructions{align-items:flex-start;flex-wrap:wrap}.import-instructions .btn-light{width:100%;justify-content:center}.import-row{grid-template-columns:60px 1fr}.import-row small{grid-column:2}.student-import-modal .modal-actions{position:sticky;bottom:-1px;background:var(--surface,#fff);padding-top:10px}}
+.import-classroom-select{margin:12px 0}.import-classroom-select select{width:100%;min-height:42px}
+.table-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-top:1px solid var(--line,#e3e9e5);font-size:12px;color:var(--muted,#68766f)}.table-pagination>div{display:flex;align-items:center;gap:10px}.table-pagination button{min-height:34px;padding:6px 12px}.table-pagination button:disabled{opacity:.45;cursor:not-allowed}@media(max-width:520px){.table-pagination{align-items:stretch;flex-direction:column}.table-pagination>div{justify-content:space-between}}
+
+/* Parent learning completion summary */
+.parent-learning-overall{display:flex;align-items:center;gap:15px;padding:12px 0}.parent-learning-overall>strong{font-size:29px;color:#236b4a;font-weight:850}.parent-learning-overall>div{display:grid;gap:8px;flex:1}.parent-learning-overall b{font-size:11px;color:#45614e}.parent-learning-overall i{display:block;height:9px;overflow:hidden;border-radius:20px;background:#edf2ed}.parent-learning-overall em{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#39865b,#9dbd8d)}.parent-learning-breakdown{display:flex;gap:8px;flex-wrap:wrap}.parent-learning-breakdown span{padding:8px 10px;border-radius:8px;background:#f5f8f5;color:#728477;font-size:10px}.parent-learning-breakdown b{color:#315b40}

@@ -1,11 +1,11 @@
-export const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'https://madarsa-cv4a.onrender.com/api/v1').replace(/\/$/, '')
+export const API_BASE = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/$/, '')
 export type ApiUser = { id:number; name:string; email:string; role:string; student_profile?:unknown; teacher_profile?:unknown }
 export async function api<T>(path:string, token?:string, init:RequestInit={}):Promise<T>{
  let response: Response
  try {
   response = await fetch(`${API_BASE}${path}`,{...init,headers:{Accept:'application/json',...(init.body instanceof FormData?{}:{'Content-Type':'application/json'}),...(token?{Authorization:`Bearer ${token}`} : {}),...(init.headers||{})}})
  } catch (error) {
-  if (error instanceof TypeError) throw new Error('تعذر الاتصال بخادم MADRASA. تأكد من تشغيل Laravel على المنفذ 8000 وواجهة Vite على 5173، ثم حدّث الصفحة. إذا استمرت المشكلة افتح تعليمات التشغيل المرفقة.')
+  if (error instanceof TypeError) throw new Error('تعذر الاتصال بخادم MADRASA. تحقق من اتصال الإنترنت وحاول تحديث الصفحة. إذا استمرت المشكلة، فقد يكون الخادم متوقفاً مؤقتاً.')
   throw error
  }
  const data=await response.json().catch(()=>({message:'تعذر قراءة استجابة الخادم'}))

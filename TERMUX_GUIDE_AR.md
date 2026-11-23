@@ -60,7 +60,7 @@ APP_URL=http://127.0.0.1:8000
 DB_CONNECTION=sqlite
 DB_DATABASE=database/database.sqlite
 DB_FOREIGN_KEYS=true
-DEMO_ACCOUNT_PASSWORD=MadrasaDemo!2026
+DEMO_ACCOUNT_PASSWORD=[تُحدد كلمة المرور محلياً عبر DEMO_ACCOUNT_PASSWORD]
 ```
 
 احفظ في nano بالضغط على `Ctrl+O` ثم Enter ثم `Ctrl+X`.
@@ -81,9 +81,9 @@ php artisan serve --host 0.0.0.0 --port 8000
 
 | الدور | البريد | كلمة المرور الافتراضية |
 |---|---|---|
-| المدير | admin@madrasa.test | MadrasaDemo!2026 |
-| المعلم | teacher@madrasa.test | MadrasaDemo!2026 |
-| الطالب | student@madrasa.test | MadrasaDemo!2026 |
+| المدير | admin@madrasa.test | [تُحدد كلمة المرور محلياً عبر DEMO_ACCOUNT_PASSWORD] |
+| المعلم | teacher@madrasa.test | [تُحدد كلمة المرور محلياً عبر DEMO_ACCOUNT_PASSWORD] |
+| الطالب | student@madrasa.test | [تُحدد كلمة المرور محلياً عبر DEMO_ACCOUNT_PASSWORD] |
 
 تُنشأ حسابات العرض فقط عندما تكون `APP_ENV=local` أو `testing`. لا تستخدم هذه الحسابات في الإنتاج. غيّر `DEMO_ACCOUNT_PASSWORD` في `.env` قبل إنشاء قاعدة جديدة أو إعادة ضبطها.
 
@@ -134,7 +134,7 @@ cd ~/projects/MADRASA/frontend && npm run dev -- --host 0.0.0.0
 curl -X POST http://127.0.0.1:8000/api/v1/auth/login \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
-  -d '{"login":"admin@madrasa.test","password":"MadrasaDemo!2026","device_name":"termux-test"}'
+  -d '{"login":"admin@madrasa.test","password":"[تُحدد كلمة المرور محلياً عبر DEMO_ACCOUNT_PASSWORD]","device_name":"termux-test"}'
 ```
 استبدل البريد بحساب المعلم أو الطالب لاختبار بقية الأدوار. سيعيد الخادم رمز Sanctum. لا تشارك الرمز مع أحد.
 

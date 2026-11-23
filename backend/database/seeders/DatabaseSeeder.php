@@ -46,7 +46,12 @@ class DatabaseSeeder extends Seeder
 
             // Demo accounts are created only in local/testing environments.
             if (!app()->environment(['local','testing'])) return;
-            $password = env('DEMO_ACCOUNT_PASSWORD', 'MadrasaDemo!2026');
+            $password = env('DEMO_ACCOUNT_PASSWORD');
+            if (!is_string($password) || trim($password) === '') {
+                throw new \RuntimeException(
+                    'يجب ضبط DEMO_ACCOUNT_PASSWORD قبل إنشاء الحسابات التجريبية.'
+                );
+            }
             $accounts = [
                 'admin' => ['name'=>'مدير المدرسة التجريبي','email'=>'admin@madrasa.test','role'=>'school_admin'],
                 'teacher' => ['name'=>'محمد عبدالرحمن - معلم','email'=>'teacher@madrasa.test','role'=>'teacher'],

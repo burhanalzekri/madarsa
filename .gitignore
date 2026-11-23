@@ -7,6 +7,55 @@ dist/
 
 .env.local
 .env.*.local
-backend/vendor/
-frontend/node_modules/
-backend/.env
+
+# Environment secrets
+**/.env*
+!**/.env.example
+
+# Local databases
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+
+# Backups and temporary files
+*.bak
+*.bak-*
+*.broken
+*.old
+*.tmp
+*.log
+
+# Dependencies and build output
+**/node_modules/
+**/vendor/
+**/dist/
+**/.vite/
+**/coverage/
+
+# Laravel generated files
+/backend/storage/logs/*
+/backend/storage/framework/cache/*
+/backend/storage/framework/sessions/*
+/backend/storage/framework/views/*
+/backend/bootstrap/cache/*.php
+
+# Local development files
+*.tsbuildinfo
+.DS_Store
+
+# Production security
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.bak*
+*.broken
+*.old
+node_modules/
+vendor/
+frontend/dist/
+*.backup-*

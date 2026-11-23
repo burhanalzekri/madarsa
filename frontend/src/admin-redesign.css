@@ -1,0 +1,279 @@
+/* MADRASA Admin Workspace — 0.39.0 */
+.app-shell{--admin-ink:#1d352a;--admin-muted:#7e9185;--admin-line:#e7eee8;--admin-green:#176044;--admin-gold:#c9a24b;background:#f5f7f5;color:var(--admin-ink)}
+.app-shell .sidebar{width:278px;padding:23px 17px 15px;background:#fff;border-left:1px solid var(--admin-line);box-shadow:-12px 0 35px #183e2b08;color:var(--admin-ink)}
+.app-shell .brand{padding:0 7px 19px;border-bottom:1px solid #edf1ed}
+.app-shell .brand-mark{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#e8f2e9,#dcebe0);color:var(--admin-green);box-shadow:none}
+.app-shell .brand b{font-size:19px;color:#183f2d}.app-shell .brand small{color:#84968a;font-size:10px}
+.app-shell .school-card{margin:16px 0 10px;padding:12px;background:#f7faf7;border:1px solid #e9efe9;border-radius:13px}
+.app-shell .school-card b{color:#284c38;font-size:11px}.app-shell .school-card small{color:#8a9a8f;font-size:10px}.app-shell .school-avatar{background:#eaf3eb;color:var(--admin-green)}.app-shell .online-dot{background:#4eaa76}
+.app-shell .nav-scroll{padding:4px 0 13px}.app-shell .nav-group{margin:13px 0 16px}.app-shell .nav-caption{padding:0 11px 7px;color:#98a69c;font-size:10px;font-weight:800}
+.app-shell .nav-link{min-height:42px;margin:2px 0;padding:9px 11px;border-radius:10px;color:#536b5b;font-size:12px;font-weight:600;gap:10px;box-shadow:none;transform:none}
+.app-shell .nav-link:hover{background:#f1f6f1;color:#20583d}.app-shell .nav-link.selected{background:#eaf3eb;color:#175b3e;box-shadow:inset -3px 0 #c9a24b;font-weight:800}
+.app-shell .nav-link em{background:#f2f5f1;color:#839187;border-radius:20px;padding:2px 7px;font-size:9px}
+.app-shell .sidebar-footer{border-top:1px solid #edf1ed;padding-top:12px}.app-shell .help-card{padding:11px;background:#f6f8f3;border:1px solid #edf0e6;border-radius:12px;color:#b28b38}.app-shell .help-card b{color:#3b5843;font-size:11px}.app-shell .help-card p{color:#89968b;font-size:9px}
+.app-shell .admin-profile{background:#f8faf8;border:1px solid #edf1ed;border-radius:12px;padding:10px 8px;margin-top:10px}.app-shell .admin-profile b{color:#284936}.app-shell .admin-profile small{color:#87978c;font-size:9px}.app-shell .admin-profile>svg{color:#a77e34}.app-shell .logout-visible-label{color:#9a7430;font-size:10px}
+.app-shell .main-area{margin-right:278px;width:calc(100% - 278px);background:#f5f7f5}
+.app-shell .topbar{height:72px;padding:0 clamp(18px,3vw,38px);background:#ffffffed;border-bottom:1px solid var(--admin-line);box-shadow:0 4px 18px #1d3e2b05;backdrop-filter:blur(14px)}
+.app-shell .breadcrumb{color:#91a096;font-size:11px}.app-shell .breadcrumb b{color:#294b37}.app-shell .topbar-right{gap:12px}.app-shell .year-chip{background:#f3f7f3;color:#61796a;border:1px solid #e9efe9;border-radius:9px;font-size:10px}.app-shell .theme-toggle{width:35px;height:35px;border:1px solid #e8eee8;border-radius:9px;background:#fff;color:#668071}.app-shell .bell-button{width:35px;height:35px;border:1px solid #e8eee8;border-radius:9px;background:#fff}.app-shell .top-user{background:#eaf2e9;color:#22583d}.app-shell .admin-top-logout{border-radius:9px;background:#fff5f3;color:#a44d43;border:1px solid #f2dfdc;font-size:10px}
+.app-shell .menu-button{width:38px;height:38px;border:1px solid #e6eee7;border-radius:10px;background:#fff;color:#235b40;box-shadow:none}
+.app-shell .page-wrap{max-width:1580px;padding:25px clamp(16px,3vw,38px) 25px}
+.app-shell .admin-api-warning{display:flex;align-items:center;gap:9px;margin:0 0 17px;padding:10px 13px;border:1px solid #e2ebdf;border-radius:10px;background:#f2f7ef;color:#637b64;font-size:10px;line-height:1.8}
+.app-shell .admin-api-warning svg{flex-shrink:0;color:#57815d}.app-shell .admin-error{border-color:#f0d8d2;background:#fff6f3;color:#a14f43}
+.app-shell .panel{border:1px solid var(--admin-line);border-radius:15px;background:#fff;box-shadow:0 5px 20px #173e2b06;padding:19px}
+.app-shell .panel-heading{margin-bottom:15px}.app-shell .panel-heading h3{font-size:13px;color:#294a36}.app-shell .panel-heading p{font-size:10px;color:#91a096}
+.app-shell .admin-welcome{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:23px 25px;margin-bottom:17px;border-radius:16px;background:linear-gradient(112deg,#164b36,#23684a);color:#fff;box-shadow:0 12px 28px #164b3618}
+.admin-welcome-kicker{display:flex;align-items:center;gap:7px;color:#e6ce91;font-size:10px;font-weight:800}.admin-welcome h1{margin:9px 0 5px;font-size:23px;color:#fff}.admin-welcome p{margin:0;color:#d2e3d7;font-size:11px;line-height:1.8}
+.admin-welcome-meta{display:grid;gap:8px;min-width:190px}.admin-welcome-meta>span{display:flex;align-items:center;gap:8px;color:#e2eee5;font-size:10px}.admin-welcome-meta svg{color:#e4ca83}.admin-refresh{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:3px;padding:8px 11px;border:1px solid #ffffff35;border-radius:8px;background:#ffffff12;color:#fff;font:inherit;font-size:10px;cursor:pointer}.admin-refresh:hover{background:#ffffff20}
+.admin-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 16px}.admin-kpi{position:relative;display:grid;gap:5px;min-height:126px;padding:15px 16px;border:1px solid var(--admin-line);border-radius:14px;background:#fff;box-shadow:0 4px 16px #193d2b05}.admin-kpi-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#edf5ee;color:#28704c;margin-bottom:3px}.admin-kpi small{font-size:10px;color:#839388}.admin-kpi strong{font-size:25px;line-height:1.25;color:#234b35;font-weight:800;font-variant-numeric:tabular-nums}.admin-kpi em{font-size:9px;color:#a0aaa2;font-style:normal}
+.admin-dashboard-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px;margin-bottom:15px}.admin-attendance-row{display:flex;align-items:center;gap:11px;margin:15px 0;color:#607568;font-size:10px}.admin-attendance-row>span{width:43px;flex-shrink:0}.admin-attendance-row>b{width:28px;text-align:left;color:#31533e;font-size:11px}.admin-attendance-track{height:8px;flex:1;overflow:hidden;border-radius:20px;background:#edf2ed}.admin-attendance-track i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#3b8a5c,#9abf8b)}.admin-attendance-total{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:13px;border-top:1px solid #edf1ed;color:#819187;font-size:10px}.admin-attendance-total strong{color:#28583b;font-size:18px}.admin-loading{padding:28px 8px;text-align:center;color:#8b9b90;font-size:11px}
+.admin-shortcuts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.admin-shortcuts button{display:flex;align-items:center;gap:9px;min-width:0;padding:10px;border:1px solid #edf1ed;border-radius:10px;background:#fbfcfb;color:#496253;text-align:right;cursor:pointer;transition:.18s}.admin-shortcuts button:hover{border-color:#cbdccc;background:#f4f8f4;transform:translateY(-1px)}.admin-shortcuts button>span{width:34px;height:34px;flex-shrink:0;display:grid;place-items:center;border-radius:9px;background:#edf5ee;color:#2d7650}.admin-shortcuts button>div{flex:1;min-width:0}.admin-shortcuts b,.admin-shortcuts small{display:block}.admin-shortcuts b{font-size:10px;color:#355540}.admin-shortcuts small{margin-top:3px;font-size:9px;color:#91a096}.admin-shortcuts button>svg{flex-shrink:0;color:#a3b0a6}
+.admin-summary-panel{margin-bottom:4px}.admin-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.admin-summary-grid>div{display:grid;gap:7px;padding:12px;border-radius:10px;background:#f8faf8;border:1px solid #edf1ed}.admin-summary-grid span{font-size:9px;color:#89988e}.admin-summary-grid b{font-size:17px;color:#31583f;font-variant-numeric:tabular-nums}
+.app-shell .page-heading{margin:5px 0 18px;gap:12px}.app-shell .page-heading h1{font-size:21px;color:#244632}.app-shell .page-heading p{font-size:10px;color:#87968c}.app-shell .btn-primary{background:#1d6847;border-radius:9px;color:#fff;box-shadow:0 5px 12px #1d684718}.app-shell .btn-light{border-radius:9px;background:#f7faf7;border-color:#e6eee7;color:#4f6c58}.app-shell .toolbar{border-radius:12px}.app-shell .table-panel{border-radius:14px}.app-shell th{background:#f7faf7;color:#718578}.app-shell td{font-size:10px}.app-shell .table-status{font-weight:700}
+.app-shell .footer{border-top:1px solid #e9eee9;margin-top:24px;padding-top:15px;color:#9aa69d;font-size:9px}
+.app-shell.sidebar-hidden .sidebar{transform:translateX(105%);opacity:0;pointer-events:none}.app-shell.sidebar-hidden .main-area{margin-right:0;width:100%}
+@media(max-width:1050px){.admin-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-dashboard-grid{grid-template-columns:1fr}.admin-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.app-shell .sidebar{width:min(300px,88vw);z-index:40;transform:translateX(105%);transition:transform .22s ease,opacity .22s ease;opacity:1;pointer-events:none}.app-shell .sidebar.sidebar-open{transform:translateX(0);pointer-events:auto}.app-shell .main-area{margin:0;width:100%}.app-shell .topbar{height:62px;padding:0 13px}.app-shell .topbar-right{gap:5px}.app-shell .top-user b,.app-shell .year-chip{display:none}.app-shell .page-wrap{padding:15px 12px 22px}.app-shell .admin-welcome{align-items:flex-start;flex-direction:column;padding:18px;border-radius:13px}.admin-welcome h1{font-size:20px}.admin-welcome-meta{width:100%;grid-template-columns:1fr 1fr;min-width:0}.admin-refresh{grid-column:1/-1}.admin-kpi-grid{gap:8px}.admin-kpi{min-height:112px;padding:12px}.admin-kpi strong{font-size:22px}.admin-shortcuts{grid-template-columns:1fr}.admin-summary-grid{gap:7px}.admin-summary-grid>div{padding:10px}.app-shell .page-heading{align-items:flex-start;flex-direction:column}.app-shell .page-heading .page-actions{width:100%;display:flex;flex-wrap:wrap}.app-shell .toolbar{padding:11px}.app-shell .footer{gap:7px;flex-direction:column}}
+@media(max-width:420px){.admin-kpi-grid{grid-template-columns:1fr 1fr}.admin-kpi small{font-size:9px}.admin-kpi strong{font-size:20px}.admin-summary-grid{grid-template-columns:1fr 1fr}.app-shell .topbar-right .admin-top-logout{width:34px;min-width:34px;padding:0;justify-content:center}.app-shell .topbar-right .admin-top-logout span{display:none}}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar,.admin-shortcuts button{transition:none!important}}
+
+/* Phase 2 — administrator attendance workspace */
+.admin-attendance{display:grid;gap:15px}.admin-attendance .attendance-filters{display:grid;grid-template-columns:1.1fr .8fr 1.2fr;gap:13px;align-items:end}.admin-attendance .form-field{display:grid;gap:7px;min-width:0}.admin-attendance .form-field>span{font-size:10px;font-weight:800;color:#64796b}.admin-attendance .form-field input,.admin-attendance .form-field select{width:100%;min-height:41px;padding:9px 11px;border:1px solid #e5ece5;border-radius:9px;background:#fff;color:#345340;font:inherit;font-size:11px;outline:none}.admin-attendance .form-field input:focus,.admin-attendance .form-field select:focus{border-color:#79a88a;box-shadow:0 0 0 3px #2d805014}.attendance-search{display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid #e5ece5;border-radius:9px;color:#8b9b90}.attendance-search input{border:0!important;box-shadow:none!important;padding-right:0!important}.attendance-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.attendance-kpi{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border:1px solid #e8eee8;border-radius:12px;background:#fff}.attendance-kpi span{font-size:10px;color:#738579}.attendance-kpi strong{font-size:21px;color:#315640;font-variant-numeric:tabular-nums}.attendance-kpi.present strong{color:#238354}.attendance-kpi.absent strong{color:#c05c53}.attendance-kpi.late strong{color:#b48232}.attendance-kpi.excused strong{color:#5579a4}.attendance-list,.attendance-report{min-width:0}.attendance-tools{display:flex;gap:7px;flex-wrap:wrap}.attendance-tools button,.attendance-report-filters button{display:inline-flex;align-items:center;gap:6px}.attendance-student-list{display:grid}.attendance-student-list article{display:grid;grid-template-columns:34px minmax(130px,1fr) auto minmax(120px,.65fr);align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #edf1ed}.attendance-student-no{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#f1f6f1;color:#65816d;font-size:10px;font-weight:800}.attendance-student-name{display:grid;gap:4px;min-width:0}.attendance-student-name b{font-size:11px;color:#355541}.attendance-student-name small{font-size:9px;color:#98a49b}.attendance-statuses{display:flex;gap:4px;flex-wrap:wrap}.attendance-statuses button{padding:7px 9px;border:1px solid #e8eee8;border-radius:8px;background:#fff;color:#829086;font:inherit;font-size:9px;cursor:pointer}.attendance-statuses button.selected.present{background:#eaf6ee;border-color:#b9dec5;color:#237447}.attendance-statuses button.selected.absent{background:#fff0ee;border-color:#efc8c3;color:#b24e45}.attendance-statuses button.selected.late{background:#fff7e8;border-color:#f0dfb8;color:#9a6b1e}.attendance-statuses button.selected.excused{background:#eef4fb;border-color:#c9d9ed;color:#4f7199}.attendance-note{width:100%;min-width:0;padding:8px 9px;border:1px solid #edf1ed;border-radius:8px;background:#fbfcfb;color:#4a6553;font:inherit;font-size:9px}.attendance-save{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid #edf1ed}.attendance-save>span{display:flex;align-items:center;gap:7px;color:#829187;font-size:10px}.attendance-save button{display:inline-flex;align-items:center;gap:7px}.attendance-report-filters{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin-bottom:14px}.attendance-report-filters .form-field{min-width:160px}.attendance-report-summary{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.attendance-report-summary span{padding:7px 10px;border-radius:8px;background:#f5f8f5;color:#718276;font-size:10px}.attendance-report-summary b{color:#315640}.attendance-report .table-scroll{overflow:auto}.attendance-report table{width:100%;border-collapse:collapse}.attendance-report th,.attendance-report td{padding:10px;text-align:right;border-bottom:1px solid #edf1ed;font-size:10px;white-space:nowrap}
+@media(max-width:900px){.admin-attendance .attendance-filters{grid-template-columns:1fr 1fr}.admin-attendance .attendance-filters .form-field:last-child{grid-column:1/-1}.attendance-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.attendance-student-list article{grid-template-columns:30px minmax(100px,1fr) auto}.attendance-note{grid-column:2/-1}}
+@media(max-width:600px){.admin-attendance .attendance-filters{grid-template-columns:1fr}.admin-attendance .attendance-filters .form-field:last-child{grid-column:auto}.attendance-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.attendance-kpi{padding:11px}.attendance-kpi strong{font-size:18px}.attendance-list .panel-heading{align-items:flex-start;flex-direction:column}.attendance-student-list article{grid-template-columns:28px minmax(0,1fr);gap:8px}.attendance-student-no{grid-row:1}.attendance-student-name{grid-column:2}.attendance-statuses{grid-column:1/-1}.attendance-note{grid-column:1/-1}.attendance-save{align-items:stretch;flex-direction:column}.attendance-save button{justify-content:center}.attendance-report-filters{align-items:stretch;flex-direction:column}.attendance-report-filters .form-field{min-width:0}}
+
+/* Phase 3 — learning delivery and student achievement tracking */
+.admin-learning{display:grid;gap:14px}.learning-tabs{display:flex;gap:7px;flex-wrap:wrap;padding:5px;border:1px solid #e7eee8;border-radius:12px;background:#fff}.learning-tabs button{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:0;border-radius:9px;background:transparent;color:#75877a;font:inherit;font-size:10px;font-weight:700;cursor:pointer}.learning-tabs button.active{background:#eaf3eb;color:#1d6847}.learning-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.learning-summary article{display:grid;grid-template-columns:34px 1fr;align-items:center;gap:5px 9px;padding:13px;border:1px solid #e7eee8;border-radius:12px;background:#fff}.learning-summary article svg{grid-row:span 2;color:#41805a}.learning-summary article span{font-size:9px;color:#829287}.learning-summary article b{font-size:20px;color:#315640}.learning-progress-panel{padding:18px}.learning-list-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:10px}.learning-list-head h3,.learning-records h3,.learning-form h3{margin:0;color:#315640;font-size:13px}.learning-list-head p,.learning-form>p{margin:5px 0 0;color:#8b9b90;font-size:9px;line-height:1.8}.learning-list-head>label{display:flex;align-items:center;gap:7px;width:min(360px,100%);padding:8px 10px;border:1px solid #e7eee8;border-radius:9px;color:#8a9b90}.learning-list-head input{width:100%;border:0;outline:0;font:inherit;font-size:10px;color:#315640}.learning-student-list article{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(140px,1fr) minmax(220px,1.2fr);align-items:center;gap:16px;padding:13px 0;border-top:1px solid #edf1ed}.learning-student-info{display:grid;gap:5px}.learning-student-info b{font-size:11px;color:#315640}.learning-student-info small{font-size:9px;color:#95a197}.learning-student-progress>div{display:flex;justify-content:space-between;gap:8px;margin-bottom:7px;font-size:9px;color:#85948a}.learning-student-progress>div b{color:#2d6747;font-size:11px}.learning-student-progress>i{display:block;height:7px;overflow:hidden;border-radius:20px;background:#edf2ed}.learning-student-progress>i em{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#39865b,#9dbd8d)}.learning-counts{display:flex;gap:8px;flex-wrap:wrap}.learning-counts span{padding:6px 8px;border-radius:7px;background:#f6f9f6;color:#839287;font-size:9px}.learning-counts b{color:#365d42}.learning-empty{padding:25px 10px;text-align:center;color:#8c9a90;font-size:10px}.learning-two-col{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr);align-items:start;gap:13px}.learning-form{display:grid;gap:12px}.learning-form>label{display:grid;gap:6px;color:#64796b;font-size:10px;font-weight:700}.learning-form input:not([type=checkbox]),.learning-form select,.learning-form textarea{width:100%;min-height:39px;padding:9px 10px;border:1px solid #e5ece5;border-radius:8px;background:#fff;color:#355640;font:inherit;font-size:10px;outline:none}.learning-form textarea{resize:vertical}.learning-form input:focus,.learning-form select:focus,.learning-form textarea:focus{border-color:#79a88a;box-shadow:0 0 0 3px #2d805014}.learning-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.learning-form-row label{display:grid;gap:6px;color:#64796b;font-size:10px}.learning-publish{display:flex!important;align-items:center;gap:8px!important}.learning-publish input{accent-color:#1d6847}.learning-form .btn-primary{display:flex;align-items:center;justify-content:center;gap:8px;min-height:40px}.learning-form hr{width:100%;border:0;border-top:1px solid #edf1ed}.learning-form h4{margin:0;color:#315640;font-size:11px}.learning-records{display:grid;gap:10px}.learning-records article{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #edf1ed}.learning-records article>div{display:grid;gap:5px;min-width:0}.learning-records article b{font-size:10px;color:#365941}.learning-records article small{font-size:9px;color:#95a197}.learning-records article>span{flex-shrink:0;padding:5px 8px;border-radius:7px;background:#f5f6f5;color:#8b958d;font-size:9px}.learning-records article>span.published{background:#eaf5ed;color:#34734b}
+@media(max-width:900px){.learning-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.learning-two-col{grid-template-columns:1fr}.learning-student-list article{grid-template-columns:1fr 1fr}.learning-counts{grid-column:1/-1}}
+@media(max-width:600px){.learning-list-head{align-items:stretch;flex-direction:column}.learning-list-head>label{width:100%}.learning-student-list article{grid-template-columns:1fr;gap:10px}.learning-counts{grid-column:auto}.learning-form-row{grid-template-columns:1fr}.learning-summary article{padding:10px}.learning-summary article b{font-size:18px}}
+/* Phase 0.43: multi-question exams and learning insights */
+.learning-question-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.learning-question-head h4{margin:0}.learning-question-card{display:grid;gap:10px;padding:14px;border:1px solid #e4ece4;border-radius:12px;background:#fbfdfb}.learning-question-card .learning-question-head>b{font-size:11px;color:#315640}.learning-remove-question{display:inline-flex;align-items:center;gap:5px;border:0;border-radius:8px;padding:6px 9px;background:#fff0ed;color:#a94d40;font:inherit;font-size:10px;cursor:pointer}.learning-insights{display:grid;gap:13px}.learning-insight-panel{padding:18px}.learning-insight-panel>h3{display:flex;align-items:center;gap:8px;margin:0;color:#315640;font-size:13px}.learning-insight-panel>p{margin:6px 0 12px;color:#89988e;font-size:10px;line-height:1.8}.learning-alert-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #edf1ed}.learning-alert-row>div{display:grid;gap:4px}.learning-alert-row b{font-size:11px;color:#315640}.learning-alert-row small{font-size:9px;color:#8a9a90}.learning-alert-row em{font-size:10px;color:#a46d2d;font-style:normal}.learning-alert-row>strong{min-width:48px;text-align:center;padding:7px 9px;border-radius:9px;background:#fff4e5;color:#a56d27;font-size:12px}.learning-subject-table{overflow-x:auto}.learning-subject-head,.learning-subject-row{display:grid;grid-template-columns:minmax(190px,1.5fr) 80px 90px 110px;align-items:center;gap:12px;min-width:520px;padding:11px 8px;border-bottom:1px solid #edf1ed;font-size:10px}.learning-subject-head{color:#829287;font-weight:700;background:#f8faf8;border-radius:8px}.learning-subject-row>div{display:grid;gap:4px}.learning-subject-row b{color:#315640}.learning-subject-row small{color:#8a9a90;font-size:9px}.learning-subject-row>strong{color:#27714b}.learning-subject-row>span{color:#687b70}@media(max-width:700px){.learning-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.learning-list-head{align-items:stretch;flex-direction:column}.learning-list-head>label{width:100%}.learning-student-list article{grid-template-columns:1fr;gap:10px}.learning-two-col{grid-template-columns:1fr}.learning-form-row{grid-template-columns:1fr}}
+.learning-subject-head,.learning-subject-row{grid-template-columns:minmax(180px,1.5fr) 65px 75px 75px 75px 95px;min-width:640px}
+
+/* MADRASA 0.43 — Unified Admin Design */
+.app-shell:not(.theme-dark) {
+  --admin-ink: #183b2c;
+  --admin-green: #174b36;
+  --admin-green-2: #236747;
+  --admin-gold: #d5ad55;
+  --admin-line: #e6ece6;
+  --admin-muted: #7c8d81;
+  background: #f5f7f4;
+  color: var(--admin-ink);
+}
+
+/* Sidebar */
+.app-shell:not(.theme-dark) .sidebar {
+  background: linear-gradient(180deg,#123b2c,#174b36);
+  border: 0;
+  color: #fff;
+  box-shadow: -8px 0 30px #102f2518;
+}
+
+.app-shell:not(.theme-dark) .brand {
+  border-color: #ffffff20;
+}
+
+.app-shell:not(.theme-dark) .brand b,
+.app-shell:not(.theme-dark) .brand small {
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .brand-mark {
+  background: linear-gradient(145deg,#e8c875,#cba34b);
+  color: #173e2d;
+}
+
+.app-shell:not(.theme-dark) .school-card {
+  background: #ffffff12;
+  border: 1px solid #ffffff20;
+}
+
+.app-shell:not(.theme-dark) .school-card b,
+.app-shell:not(.theme-dark) .school-card small {
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .school-avatar {
+  background: #ffffff20;
+  color: #e8c875;
+}
+
+.app-shell:not(.theme-dark) .nav-caption {
+  color: #c3d5c8;
+}
+
+.app-shell:not(.theme-dark) .nav-link {
+  color: #e0ebe3;
+  border-radius: 10px;
+}
+
+.app-shell:not(.theme-dark) .nav-link:hover {
+  background: #ffffff15;
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .nav-link.selected {
+  background: linear-gradient(100deg,#e5c36f,#d4ae58);
+  color: #173e2d;
+  box-shadow: inset -3px 0 #fff;
+}
+
+.app-shell:not(.theme-dark) .nav-link em {
+  background: #ffffff20;
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .sidebar-footer {
+  border-color: #ffffff25;
+}
+
+.app-shell:not(.theme-dark) .help-card {
+  background: #ffffff12;
+  border-color: #ffffff20;
+}
+
+.app-shell:not(.theme-dark) .help-card b,
+.app-shell:not(.theme-dark) .help-card p {
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .admin-profile {
+  background: #ffffff12;
+  border-color: #ffffff20;
+}
+
+.app-shell:not(.theme-dark) .admin-profile b,
+.app-shell:not(.theme-dark) .admin-profile small {
+  color: #fff;
+}
+
+.app-shell:not(.theme-dark) .logout-visible-label {
+  color: #f0d18a;
+}
+
+/* Main workspace */
+.app-shell:not(.theme-dark) .main-area {
+  background: #f5f7f4;
+}
+
+.app-shell:not(.theme-dark) .topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--admin-line);
+  box-shadow: 0 3px 15px #183b2c08;
+}
+
+.app-shell:not(.theme-dark) .breadcrumb b {
+  color: var(--admin-green);
+}
+
+.app-shell:not(.theme-dark) .page-wrap {
+  max-width: 1600px;
+}
+
+.app-shell:not(.theme-dark) .page-heading h1 {
+  color: var(--admin-green);
+  font-weight: 800;
+}
+
+/* Welcome */
+.app-shell:not(.theme-dark) .admin-welcome {
+  background: linear-gradient(115deg,#123d2d,#246747);
+  border: 1px solid #ffffff12;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px #174b3620;
+}
+
+/* KPI cards */
+.app-shell:not(.theme-dark) .admin-kpi {
+  background: #fff;
+  border: 1px solid var(--admin-line);
+  border-radius: 15px;
+  box-shadow: 0 5px 18px #183b2c08;
+  transition: transform .2s,box-shadow .2s;
+}
+
+.app-shell:not(.theme-dark) .admin-kpi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #183b2c12;
+}
+
+.app-shell:not(.theme-dark) .admin-kpi-icon {
+  background: #edf4ed;
+  color: var(--admin-green-2);
+}
+
+.app-shell:not(.theme-dark) .admin-kpi strong {
+  color: var(--admin-green);
+}
+
+/* Panels and tables */
+.app-shell:not(.theme-dark) .panel {
+  background: #fff;
+  border: 1px solid var(--admin-line);
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #183b2c08;
+}
+
+.app-shell:not(.theme-dark) .panel-heading h3 {
+  color: var(--admin-green);
+}
+
+.app-shell:not(.theme-dark) th {
+  background: #edf3ed;
+  color: #345b43;
+}
+
+.app-shell:not(.theme-dark) td {
+  color: #405749;
+}
+
+/* Buttons */
+.app-shell:not(.theme-dark) .btn-primary {
+  background: var(--admin-green);
+  color: #fff;
+  border: 1px solid var(--admin-green);
+}
+
+.app-shell:not(.theme-dark) .btn-primary:hover {
+  background: #236747;
+}
+
+.app-shell:not(.theme-dark) .btn-light {
+  background: #fff;
+  color: var(--admin-green);
+  border: 1px solid #dfe8df;
+}
+
+.app-shell:not(.theme-dark) .menu-button {
+  color: var(--admin-green);
+  border-color: var(--admin-line);
+}
+
+/* Form controls */
+.app-shell:not(.theme-dark) input,
+.app-shell:not(.theme-dark) select,
+.app-shell:not(.theme-dark) textarea {
+  color: #294936;
+}
+
+.app-shell:not(.theme-dark) input:focus,
+.app-shell:not(.theme-dark) select:focus,
+.app-shell:not(.theme-dark) textarea:focus {
+  border-color: #b99a50;
+  box-shadow: 0 0 0 3px #d5ad5525;
+}
+
+/* Responsive */
+@media(max-width:760px) {
+  .app-shell:not(.theme-dark) .sidebar {
+    background: linear-gradient(180deg,#123b2c,#174b36);
+  }
+
+  .app-shell:not(.theme-dark) .admin-welcome {
+    border-radius: 14px;
+  }
+
+  .app-shell:not(.theme-dark) .page-wrap {
+    padding-inline: 12px;
+  }
+}

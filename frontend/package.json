@@ -1,7 +1,7 @@
 {
   "name": "madrasa-frontend",
   "private": true,
-  "version": "0.37.0",
+  "version": "0.43.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",

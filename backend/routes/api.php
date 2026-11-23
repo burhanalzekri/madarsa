@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\V1\{AuthController,StudentController,TeacherController,EnrollmentController,ClassroomController,TeacherAssignmentController,StudentLearningController,TeacherWorkspaceController,AcademicStructureController,CurriculumController,AssessmentController,SchoolReportsController,ClassScheduleController,ParentPortalController,AnnouncementController,StudentAcademicReportController};
+use App\Http\Controllers\Api\V1\{AuthController,StudentController,TeacherController,EnrollmentController,ClassroomController,TeacherAssignmentController,StudentLearningController,TeacherWorkspaceController,AcademicStructureController,CurriculumController,AssessmentController,SchoolReportsController,ClassScheduleController,ParentPortalController,AnnouncementController,StudentAcademicReportController,StudentImportController,AdminAttendanceController,AdminLearningController,AdminLearningInsightsController};
 
 Route::get('/health', fn () => response()->json([
     'status' => 'ok',
@@ -66,6 +66,16 @@ Route::prefix('v1')->group(function () {
         // School administration: management APIs are never exposed to teacher/student roles.
         Route::middleware('role:school_admin,super_admin')->group(function () {
             Route::get('/admin/reports/overview', [SchoolReportsController::class, 'overview']);
+            Route::get('/admin/attendance/roster', [AdminAttendanceController::class, 'roster']);
+            Route::post('/admin/attendance', [AdminAttendanceController::class, 'store']);
+            Route::get('/admin/attendance/report', [AdminAttendanceController::class, 'report']);
+            Route::get('/admin/learning', [AdminLearningController::class, 'index']);
+            Route::get('/admin/learning/insights', [AdminLearningInsightsController::class, 'index']);
+            Route::post('/admin/learning/assignments', [AdminLearningController::class, 'createAssignment']);
+            Route::post('/admin/learning/exams', [AdminLearningController::class, 'createExam']);
+            Route::get('/admin/students/export', [StudentImportController::class, 'export']);
+            Route::get('/admin/students/import-template', [StudentImportController::class, 'template']);
+            Route::post('/admin/students/import', [StudentImportController::class, 'import']);
             Route::get('/admin/announcements', [AnnouncementController::class, 'adminIndex']);
             Route::post('/admin/announcements', [AnnouncementController::class, 'store']);
             Route::post('/admin/parent-links', [ParentPortalController::class, 'linkStudent']);

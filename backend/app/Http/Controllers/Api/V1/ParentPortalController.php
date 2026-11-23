@@ -38,11 +38,24 @@ class ParentPortalController extends Controller
                 ->join('grade_subjects as gs', 'gs.id', '=', 'a.grade_subject_id')->join('subjects as sub', 'sub.id', '=', 'gs.subject_id')
                 ->where('a.school_id', $schoolId)->where('s.student_profile_id', $sid)->orderByDesc('s.updated_at')->limit(8)
                 ->select('a.id', 'a.title', 'sub.name as subject', 's.score', 'a.max_score', 's.submitted_at', 's.teacher_feedback')->get();
+            $classroom = DB::table('student_enrollments as e')->join('classrooms as c','c.id','=','e.classroom_id')
+                ->where('e.school_id',$schoolId)->where('e.student_profile_id',$sid)->where('e.status','active')->select('c.id','c.grade_id')->first();
+            $lessonIds = $classroom ? DB::table('lessons as l')->join('curriculum_units as cu','cu.id','=','l.curriculum_unit_id')
+                ->join('grade_subjects as gs','gs.id','=','cu.grade_subject_id')->where('gs.grade_id',$classroom->grade_id)->where('l.is_published',true)->pluck('l.id') : collect();
+            $lessonsDone = $lessonIds->isEmpty() ? 0 : DB::table('lesson_progress')->where('school_id',$schoolId)->where('student_profile_id',$sid)->whereIn('lesson_id',$lessonIds)->where('completion_percent',100)->count();
+            $assignmentTotal = $classroom ? DB::table('assignments')->where('school_id',$schoolId)->where('classroom_id',$classroom->id)->where('is_published',true)->count() : 0;
+            $assignmentDone = $classroom ? DB::table('assignment_submissions as sub')->join('assignments as a','a.id','=','sub.assignment_id')->where('a.school_id',$schoolId)->where('a.classroom_id',$classroom->id)->where('a.is_published',true)->where('sub.student_profile_id',$sid)->whereNotNull('sub.submitted_at')->count() : 0;
+            $examTotal = $classroom ? DB::table('exams')->where('school_id',$schoolId)->where('classroom_id',$classroom->id)->where('is_published',true)->count() : 0;
+            $examDone = $classroom ? DB::table('exam_attempts as at')->join('exams as x','x.id','=','at.exam_id')->where('x.school_id',$schoolId)->where('x.classroom_id',$classroom->id)->where('x.is_published',true)->where('at.student_profile_id',$sid)->whereIn('at.status',['submitted','submitted_for_review','graded'])->count() : 0;
+            $learningTotal = $lessonIds->count() + $assignmentTotal + $examTotal;
+            $learningDone = $lessonsDone + $assignmentDone + $examDone;
             return [
                 'id' => $sid, 'name' => $child->name, 'student_number' => $child->student_number,
                 'relationship' => $child->relationship, 'grade' => $child->grade, 'classroom' => $child->classroom,
                 'attendance' => ['present' => (int)($attendanceSummary['present'] ?? 0), 'absent' => (int)($attendanceSummary['absent'] ?? 0), 'late' => (int)($attendanceSummary['late'] ?? 0), 'excused' => (int)($attendanceSummary['excused'] ?? 0), 'total' => (clone $attendance)->count()],
                 'exam_results' => $results, 'assignments' => $assignments,
+                'learning_progress' => ['lessons_done'=>$lessonsDone,'lessons_total'=>$lessonIds->count(),'assignments_done'=>$assignmentDone,'assignments_total'=>$assignmentTotal,
+                    'exams_done'=>$examDone,'exams_total'=>$examTotal,'completion_percent'=>$learningTotal ? (int) round($learningDone/$learningTotal*100) : 0],
             ];
         })->values();
 
